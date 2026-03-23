@@ -1,0 +1,19 @@
+name: Frontend App Workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: echo
+        run: |
+          echo "Hello from GitHub Actions!"
+          echo "Current branch: $GITHUB_BRANCH"
+          echo "Current commit: $GITHUB_SHA"
